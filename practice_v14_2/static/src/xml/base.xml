@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+    <t t-name="IntegerSlider">
+        <div class="o_field_integer_slider"/>
+    </t>
+    <t t-name="MiniColorField">
+        <input class="o_mini_color_field" value="#276cb8"/>
+    </t>
+    <t t-name="ColorpickerField">
+        <div class="main">
+      <h1>Pickr library</h1>
+      <p>Select Button</p>
+      <div class="color_input"/>
+    </div>
+    </t>
+    <t t-name="ColorpickerNewField">
+    <div class="main">
+      <div class="colorpicker"/>
+        <div class="onchangeval"/>
+    </div>
+    </t>
+
+    <t t-name="IntegerSlider_temp">
+<div t-name="some.template">
+    <span class="val"><t t-esc="widget.count"/></span>
+    <button>Increment</button>
+</div>
+    </t>
+
+    <t t-name="OrderReceipt" t-inherit="point_of_sale.Orderline" t-inherit-mode="extension" owl="1">
+        <xpath expr="//span[hasclass('price')]" position="before">
+            <button t-on-click="onRemoveLine" class="o_deletebutton" style="float:right;">Delete</button>
+        </xpath>
+    </t>
+</templates>

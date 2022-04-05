@@ -1,0 +1,39 @@
+<odoo>
+    <record id="view_school_form" model="ir.ui.view">
+        <field name="name">school.models.form</field>
+        <field name="model">school.models</field>
+        <field name="arch" type="xml">
+            <form string="School">
+                <sheet>
+                    <group>
+                        <field name="age" widget="integer_field_slider" options="{'min':50,'max':100}"/>
+                        <field name="ages" widget="integer_field_slider" options="{'min':00,'max':100}"/>
+                        <field name="address" widget="color_picker_field"/>
+                    </group>
+                </sheet>0
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_school_view">
+        <field name="name">School Form View</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">school.models</field>
+        <field name="binding_view_types">form,tree</field>
+    </record>
+
+
+    <menuitem
+            id="menu_school_root"
+            name="School"
+            web_icon="static/description/icon.png"
+    />
+    <menuitem
+            id="menu_school_submenu"
+            name="School"
+            parent="menu_school_root"
+            action="action_school_view"
+            sequence="0"/>
+
+
+</odoo>

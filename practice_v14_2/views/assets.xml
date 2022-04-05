@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" name="practice assets backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/practice_v14_2/static/src/js/basic_fields.js"/>
+            <script type="text/javascript" src="/practice_v14_2/static/src/js/message_on_home_screen.js"/>
+            <script type="text/javascript" src="/practice_v14_2/static/src/js/color_picker.js"/>
+            <script type="text/javascript" src="/practice_v14_2/static/src/js/color_picker_field.js"/>
+        </xpath>
+    </template>
+
+    <template id="assets_delete" inherit_id="point_of_sale.assets">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/practice_v14_2/static/src/js/basic_fields.js"/>
+        </xpath>
+    </template>
+
+    <template id="assets_portal_custom_fields" inherit_id="web.assets_frontend" name="Portal Assets" priority="15">
+        <xpath expr="//script[last()]" position="after">
+            <script type="text/javascript" src="/practice_v14_2/static/src/js/customer_sign_portal_extend.js"/>
+        </xpath>
+    </template>
+
+    <template id="res_partner_model" inherit_id="website.assets_frontend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/practice_v14_2/static/src/js/website_test.js"/>
+        </xpath>
+    </template>
+
+    <template id="template_test" name="Test">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 ">
+                            <h1>Test Test</h1>
+                        </div>
+                        <div class="col-12 table_template">
+                            <div class="btn btn-primary">On Click</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+    <template id="template_test_partner" name="Test Partner">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="table_template">
+                        <div class="btn btn-primary">Back</div>
+                    </div>
+                <div class="container">
+                    <div class="col-12 ">
+                        <h1>Partner Details</h1>
+                    </div>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span t-esc="partner.id"/>
+                                </td>
+                                <td>
+                                    <span t-esc="partner.name"/>
+                                </td>
+                                <td>
+                                    <span t-esc="partner.phone"/>
+                                </td>
+                                <td>
+                                    <span t-esc="partner.email"/>
+                                </td>
+                                <td>
+                                    <span t-esc="partner.barcode"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+</odoo>
